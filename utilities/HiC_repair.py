@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
 Created on Wed Oct 28 14:28:16 2015
@@ -227,7 +226,7 @@ def repair_chimeras(bamfile1, bamfile2, outfile, min_mapq):
     # open as bamfile objects
     file1 = pysam.AlignmentFile(bamfile1,"rb");
     file2 = pysam.AlignmentFile(bamfile2,"rb");
-    out = pysam.AlignmentFile(outfile,"wh", template=file1);
+    out = pysam.AlignmentFile(outfile,"wb", template=file1); #TODO from wh to wb
 
     # look at first aligned segments
     f1 = next(file1)
